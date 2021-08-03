@@ -1,4 +1,4 @@
-
+let model = require('./sort.js');
 // const bubbleSort = (array) => {
 //   for (let i = array.length - 1; i > 0; i--) {
 //     for (let j = 0; j <= i - 1; j++) {
@@ -14,15 +14,12 @@
 
 const bubbleSort = (array) => {
   let noSwaps;
-  const sort = (array, num1, num2) => {
-    return [array[num1], array[num2]] = [array[num2], array[num1]];
-  }
 
   for (let i = array.length - 1; i > 0; i--) {
     noSwaps = true;
     for (let j = 0; j <= i - 1; j++) {
       if (array[j] > array [j + 1]) {
-        sort(array, j, j + 1)
+        model.sort(array, j, j + 1)
       }
       noSwaps = false;
     }
