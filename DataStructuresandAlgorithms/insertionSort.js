@@ -1,5 +1,3 @@
-let model = require('./model.js');
-
 const insertionSort = (array) => {
   for (let i = 1; i < array.length; i++) {
     currentVal = array[i];
