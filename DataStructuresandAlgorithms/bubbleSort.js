@@ -1,4 +1,4 @@
-let model = require('./sort.js');
+let model = require('./model.js');
 // const bubbleSort = (array) => {
 //   for (let i = array.length - 1; i > 0; i--) {
 //     for (let j = 0; j <= i - 1; j++) {
