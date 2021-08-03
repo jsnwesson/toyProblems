@@ -1,13 +1,32 @@
 
+// const bubbleSort = (array) => {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     for (let j = 0; j <= i - 1; j++) {
+//       if (array[j] > array [j + 1]) {
+//         let temp = array[j];
+//         array[j] = array[j + 1];
+//         array[j + 1] = temp;
+//       }
+//     }
+//   }
+//   return array
+// }
+
 const bubbleSort = (array) => {
+  let noSwaps;
+  const sort = (array, num1, num2) => {
+    return [array[num1], array[num2]] = [array[num2], array[num1]];
+  }
+
   for (let i = array.length - 1; i > 0; i--) {
+    noSwaps = true;
     for (let j = 0; j <= i - 1; j++) {
       if (array[j] > array [j + 1]) {
-        let temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
+        sort(array, j, j + 1)
       }
+      noSwaps = false;
     }
+    if (noSwaps) break;
   }
   return array
 }
