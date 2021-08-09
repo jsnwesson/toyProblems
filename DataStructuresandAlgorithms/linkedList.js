@@ -53,6 +53,18 @@ class linkedList{
     }
     return temp;
   }
+  unshift(val) {
+    let newHead = new Node(val);
+    if (!this.head) {
+      this.head = newHead;
+      this.tail = this.head;
+    } else {
+      newHead.next = this.head;
+      this.head = newHead;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 let single = new linkedList;
@@ -61,4 +73,5 @@ single.push(2);
 single.push(3);
 // single.pop()
 console.log(single.shift())
-console.log(single)
+console.log(single.unshift(0))
+// console.log(single)
