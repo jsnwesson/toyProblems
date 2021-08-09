@@ -42,11 +42,23 @@ class linkedList{
       current = current.next;
     }
   }
+  shift(){
+    if (!this.head) return undefined;
+    let temp = this.head;
+    this.head = this.head.next;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return temp;
+  }
 }
 
 let single = new linkedList;
 single.push(1);
 single.push(2);
 single.push(3);
-single.pop()
-console.log(single);
+// single.pop()
+console.log(single.shift())
+console.log(single)
