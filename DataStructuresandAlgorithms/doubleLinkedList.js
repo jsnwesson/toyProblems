@@ -120,7 +120,20 @@ class DoublyLinkedList{
     return true;
   }
   remove(index){
+    if (index < 0 || index >= this.length) return false;
 
+    if (index === 0) return !!this.shift();
+    if (index === this.length - 1) return !!this.pop();
+
+    let removed = this.get(index)
+    let prevNode = removed.prev;
+    let nextNode = removed.next;
+
+    prevNode.next = nextNode, nextNode.prev = prevNode;
+    removed.next = null, removed.prev = null;
+
+    this.length--;
+    return removed;
   }
 }
 
@@ -129,5 +142,5 @@ list.push(100);
 list.push(10);
 list.push('last item');
 list.unshift(1000);
-console.log(list.insert(2, 1))
+console.log(list.remove(2))
 console.log(list)
