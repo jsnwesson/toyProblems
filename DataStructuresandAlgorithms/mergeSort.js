@@ -37,4 +37,14 @@ const mergeArrays = (array1, array2) => {
   return results;
 }
 
-console.log(mergeArrays([1,2,3,4,5,6,7,8],[7,8,9,10]))
+const mergeSort = (array) => {
+  if (array.length === 1) {
+    return array;
+  }
+  let mid = Math.floor(array.length / 2);
+  let left = mergeSort(array.slice(0, mid));
+  let right = mergeSort(array.slice(mid));
+  return mergeArrays(left, right);
+}
+
+console.log(mergeSort([1,2,3,4,5,6,7,87,8,9,10]))
