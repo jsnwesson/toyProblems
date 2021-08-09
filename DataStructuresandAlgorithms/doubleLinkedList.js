@@ -27,10 +27,25 @@ class DoublyLinkedList{
     this.length++;
     return this;
   }
+  pop(){
+    let removed = this.tail;
+    if (!this.head) return null;
+    if (this.length === 1) {
+      this.head === null;
+      this.tail === null;
+    } else {
+      this.tail = this.tail.prev;
+      this.tail.next = null;
+    }
+    removed.prev = null;
+    this.length--;
+    return removed;
+  }
 }
 
 let list = new DoublyLinkedList;
 list.push(100);
 list.push(10);
-list.push('last item')
-console.log(list.push('nevermind, this is the last one'))
+list.push('last item');
+list.pop();
+console.log(list)
