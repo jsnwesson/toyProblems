@@ -95,7 +95,12 @@ class DoublyLinkedList{
     return node;
   }
   set(index, value){
-
+    if (this.get(index)) {
+      let node = this.get(index);
+      node.value = value;
+      return true;
+    }
+    return false;
   }
   insert(index, value) {
 
@@ -110,4 +115,4 @@ list.push(100);
 list.push(10);
 list.push('last item');
 list.unshift(1000);
-console.log(list.get(3))
+console.log(list.set(2, 1))
