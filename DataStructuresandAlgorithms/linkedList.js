@@ -82,6 +82,19 @@ class linkedList{
     node.value = value;
     return true;
   }
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+
+    if (index === 0) return !!this.unshift(value);
+    if (index === this.length) return !!this.push(value);
+
+    let prevNode = this.get(index - 1);
+    let newNode = new Node(value);
+    newNode.next = prevNode.next;
+    prevNode.next = newNode;
+    this.length++;
+    return true;
+  }
 }
 
 let single = new linkedList;
@@ -91,5 +104,5 @@ single.push(3);
 // single.pop()
 // console.log(single.shift())
 // console.log(single.unshift(0))
-console.log(single.set(0, 4))
+console.log(single.insert(3, 4))
 console.log(single)
