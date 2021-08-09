@@ -65,6 +65,15 @@ class linkedList{
     this.length++;
     return this;
   }
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let result = this.head;
+    while (index > 0) {
+      result = result.next
+      index--;
+    }
+    return result;
+  }
 }
 
 let single = new linkedList;
@@ -72,6 +81,7 @@ single.push(1);
 single.push(2);
 single.push(3);
 // single.pop()
-console.log(single.shift())
-console.log(single.unshift(0))
+// console.log(single.shift())
+// console.log(single.unshift(0))
+console.log(single.get(100))
 // console.log(single)
