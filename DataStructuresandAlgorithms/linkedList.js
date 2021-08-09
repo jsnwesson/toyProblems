@@ -74,6 +74,14 @@ class linkedList{
     }
     return result;
   }
+  set(index, value) {
+    if (!this.get(index)) {
+      return false;
+    }
+    let node = this.get(index);
+    node.value = value;
+    return true;
+  }
 }
 
 let single = new linkedList;
@@ -83,5 +91,5 @@ single.push(3);
 // single.pop()
 // console.log(single.shift())
 // console.log(single.unshift(0))
-console.log(single.get(100))
-// console.log(single)
+console.log(single.set(0, 4))
+console.log(single)
