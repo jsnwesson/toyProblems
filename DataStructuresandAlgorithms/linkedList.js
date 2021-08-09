@@ -107,6 +107,27 @@ class linkedList{
     this.length--;
     return removed;
   }
+  reverse() {
+    if (!this.head) return null;
+    if (this.head === this.tail) return this;
+
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+
+    let prev = null;
+    let next;
+
+    let counter = this.length;
+    while (counter > 0) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+      counter--;
+    }
+    return this;
+  }
 }
 
 let single = new linkedList;
@@ -116,5 +137,4 @@ single.push(3);
 // single.pop()
 // console.log(single.shift())
 // console.log(single.unshift(0))
-console.log(single.remove(1))
-console.log(single)
+console.log(single.reverse())
