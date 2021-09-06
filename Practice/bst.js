@@ -71,8 +71,21 @@ class BST {
   }
 
   DFSPreorder(){
-
+    var storage = [];
+    function traversal(current){
+      storage.push(current.value);
+      if (current.left) {
+        traversal(current.left);
+      }
+      if (current.right) {
+        traversal(current.right)
+      }
+        return;
+    }
+    traversal(this.root);
+    return storage;
   }
+
 }
 
 var tree = new BST;
@@ -83,5 +96,5 @@ tree.insert(9);
 tree.insert(7);
 tree.insert(14);
 // console.log(tree.find(14))
-console.log(tree.BFS())
+console.log(tree.DFSPreorder())
 // console.log(tree);
