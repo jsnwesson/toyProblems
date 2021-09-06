@@ -132,9 +132,9 @@ class linkedList{
 
 let single = new linkedList;
 single.push(1);
-single.push(2);
-single.push(3);
-// single.pop()
+// single.push(2);
+// single.push(3);
+single.pop()
 // console.log(single.shift())
 // console.log(single.unshift(0))
-console.log(single.reverse())
+// console.log(single.reverse())

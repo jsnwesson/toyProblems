@@ -141,6 +141,6 @@ let list = new DoublyLinkedList;
 list.push(100);
 list.push(10);
 list.push('last item');
-list.unshift(1000);
-console.log(list.remove(2))
+// list.unshift(1000);
+// console.log(list.remove(2))
 console.log(list)
