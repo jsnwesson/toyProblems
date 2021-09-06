@@ -80,7 +80,6 @@ class BST {
       if (current.right) {
         traversal(current.right)
       }
-        return;
     }
     traversal(this.root);
     return storage;
@@ -94,13 +93,25 @@ class BST {
       if (current.right) {
         traversal(current.right);
       }
-      storage.push(current.value)
+      storage.push(current.value);
+      return;
     };
     traversal(this.root);
     return storage;
   }
   DFSInOrder(){
-
+    var storage = [];
+    function traversal(current) {
+      if (current.left) {
+        traversal(current.left);
+      }
+      storage.push(current.value);
+      if (current.right) {
+        traversal(current.right);
+      }
+    };
+    traversal(this.root);
+    return storage;
   }
 }
 
