@@ -85,7 +85,23 @@ class BST {
     traversal(this.root);
     return storage;
   }
+  DFSPostOrder(){
+    var storage = [];
+    function traversal(current){
+      if (current.left) {
+        traversal(current.left);
+      }
+      if (current.right) {
+        traversal(current.right);
+      }
+      storage.push(current.value)
+    };
+    traversal(this.root);
+    return storage;
+  }
+  DFSInOrder(){
 
+  }
 }
 
 var tree = new BST;
@@ -96,5 +112,5 @@ tree.insert(9);
 tree.insert(7);
 tree.insert(14);
 // console.log(tree.find(14))
-console.log(tree.DFSPreorder())
+console.log(tree.DFSInOrder())
 // console.log(tree);
