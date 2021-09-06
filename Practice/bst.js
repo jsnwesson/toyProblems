@@ -51,6 +51,28 @@ class BST {
       }
     }
   }
+
+  BFS(){
+    if (!this.root) return [];
+
+    var queue = [];
+    var storage = [];
+
+    var current = this.root;
+    queue.push(current);
+    while(queue.length){
+      storage.push(current.value);
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+      queue.shift();
+      current = queue[0];
+    }
+    return storage;
+  }
+
+  DFSPreorder(){
+
+  }
 }
 
 var tree = new BST;
@@ -60,5 +82,6 @@ tree.insert(8);
 tree.insert(9);
 tree.insert(7);
 tree.insert(14);
-console.log(tree.find(14))
-console.log(tree);
+// console.log(tree.find(14))
+console.log(tree.BFS())
+// console.log(tree);
