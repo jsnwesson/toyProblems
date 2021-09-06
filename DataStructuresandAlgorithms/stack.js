@@ -23,6 +23,7 @@ class Stack{
     let removed = this.first;
 
     if (this.size === 1) {
+      this.first = null;
       this.last = null;
     } else {
       this.first = this.first.next;
@@ -41,8 +42,8 @@ class Node{
 
 let stack = new Stack;
 stack.push(1);
-stack.push(2);
-stack.pop();
-stack.push(3);
+// stack.push(2);
+// stack.pop();
+// stack.push(3);
 stack.pop();
 console.log(stack)
