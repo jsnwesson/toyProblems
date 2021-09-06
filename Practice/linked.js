@@ -135,7 +135,7 @@ class LinkedList{
   }
 }
 
-let link = new LinkedList();
+let link = new LinkedList;
 link.push(1);
 link.push(2);
 link.push(3);
